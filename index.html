@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+
+    </head>
+    <body>
+    
+        <div id="app">
+            <div class="product">
+                
+            <div class="product-image">
+                <img v-bind:src="image" alt="Image" v-bind:href="iamgeLink">
+            </div>
+
+            <div class="product-info">
+                <h1>{{ products }}</h1>
+                <p v-if="onSale">On Sale</p>
+                <p v-else>Out of Stock</p>
+
+                <ul>  
+                    <li v-for="size in sizes" :key="size.id">
+                          {{ size }}
+                      </li>
+                  </ul>
+
+                  <button @click="addToCart"> Add to Cart </button>
+
+                  <div class="cart">
+                      <p>Cart({{ cart }})</p>
+                  </div>
+                </div>
+
+                 
+            </div>
+
+         
+        </div>
+
+       <!-- development version, includes helpful console warnings --> 
+       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
